@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Object Basics Examples</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ddd;
+            overflow: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>JavaScript Object Basics Examples</h1>
+    <p>Open your browser's console to view the output of the following examples.</p>
+
+    <h2>1. Object Literal</h2>
+    <pre id="object-literal"></pre>
+
+    <h2>2. Accessing Object Properties</h2>
+    <pre id="access-properties"></pre>
+
+    <h2>3. Setting Object Properties</h2>
+    <pre id="set-properties"></pre>
+
+    <h2>4. Using <code>this</code> in Methods</h2>
+    <pre id="this-method"></pre>
+
+    <h2>5. Constructor Function</h2>
+    <pre id="constructor-function"></pre>
+
+    <script>
+        // 1. Object Literal
+        const person = {
+            name: 'John Doe',
+            age: 30,
+            greet: function() {
+                return 'Hello, my name is ' + this.name;
+            }
+        };
+        document.getElementById('object-literal').textContent = JSON.stringify(person, null, 2);
+
+        // 2. Accessing Object Properties
+        const personName = person.name; // Dot notation
+        const personAge = person['age']; // Bracket notation
+        document.getElementById('access-properties').textContent = 'Name: ' + personName + '\nAge: ' + personAge;
+
+        // 3. Setting Object Properties
+        person.name = 'Jane Doe'; // Using dot notation
+        person['age'] = 25; // Using bracket notation
+        document.getElementById('set-properties').textContent = JSON.stringify(person, null, 2);
+
+        // 4. Using 'this' in Methods
+        person.sayAge = function() {
+            return 'I am ' + this.age + ' years old';
+        };
+        document.getElementById('this-method').textContent = person.greet() + '\n' + person.sayAge();
+
+        // 5. Constructor Function
+        function Car(make, model, year) {
+            this.make = make;
+            this.model = model;
+            this.year = year;
+        }
+        const myCar = new Car('Toyota', 'Corolla', 2020);
+        document.getElementById('constructor-function').textContent = JSON.stringify(myCar, null, 2);
+    </script>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Conditionals Examples</title>
+</head>
+<body>
+    <h1>JavaScript Conditionals Examples</h1>
+    <p>Open your browser's console to view the output of the following examples.</p>
+
+    <script>
+        console.log("===== 1. if...else Statement =====");
+
+        let time = 14; // 2 PM in 24-hour format
+
+        if (time < 12) {
+            console.log("Good morning!");
+        } else if (time < 18) {
+            console.log("Good afternoon!");
+        } else {
+            console.log("Good evening!");
+        }
+
+        console.log("\n===== 2. switch Statement =====");
+
+        let day = new Date().getDay(); // 0 = Sunday, 1 = Monday, ..., 6 = Saturday
+
+        switch (day) {
+            case 0:
+                console.log("Today is Sunday.");
+                break;
+            case 1:
+                console.log("Today is Monday.");
+                break;
+            case 2:
+                console.log("Today is Tuesday.");
+                break;
+            case 3:
+                console.log("Today is Wednesday.");
+                break;
+            case 4:
+                console.log("Today is Thursday.");
+                break;
+            case 5:
+                console.log("Today is Friday.");
+                break;
+            case 6:
+                console.log("Today is Saturday.");
+                break;
+            default:
+                console.log("Invalid day.");
+        }
+
+        console.log("\n===== 3. Ternary Operator =====");
+
+        let age = 20;
+        let canVote = (age >= 18) ? "Yes, you can vote." : "No, you cannot vote yet.";
+        console.log(canVote);
+
+        console.log("\n===== 4. Active Learning: A Simple Calendar =====");
+
+        let month = new Date().getMonth(); // 0 = January, 1 = February, ..., 11 = December
+        let monthName;
+
+        switch (month) {
+            case 0:
+                monthName = "January";
+                break;
+            case 1:
+                monthName = "February";
+                break;
+            case 2:
+                monthName = "March";
+                break;
+            case 3:
+                monthName = "April";
+                break;
+            case 4:
+                monthName = "May";
+                break;
+            case 5:
+                monthName = "June";
+                break;
+            case 6:
+                monthName = "July";
+                break;
+            case 7:
+                monthName = "August";
+                break;
+            case 8:
+                monthName = "September";
+                break;
+            case 9:
+                monthName = "October";
+                break;
+            case 10:
+                monthName = "November";
+                break;
+            case 11:
+                monthName = "December";
+                break;
+            default:
+                monthName = "Unknown";
+        }
+
+        console.log(`The current month is ${monthName}.`);
+
+        console.log("\n===== 5. Active Learning: More Color Choices =====");
+
+        let color = "purple";
+        let response;
+
+        switch (color) {
+            case "red":
+                response = "Red is a bold color.";
+                break;
+            case "blue":
+                response = "Blue is a calming color.";
+                break;
+            case "green":
+                response = "Green is the color of nature.";
+                break;
+            case "yellow":
+                response = "Yellow is bright and cheerful.";
+                break;
+            case "purple":
+                response = "Purple is royal and mysterious.";
+                break;
+            default:
+                response = "That's an interesting color choice!";
+        }
+
+        console.log(response);
+    </script>
+</body>
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Functions Examples</title>
+</head>
+<body>
+    <h1>JavaScript Functions Examples</h1>
+    <p>Open your browser's console to view the output of the following examples.</p>
+
+    <script>
+        console.log("===== 1. Function Declaration =====");
+
+        // Function Declaration
+        function greet(name) {
+            console.log(`Hello, ${name}!`);
+        }
+
+        // Invoking the function
+        greet('Alice');
+
+        console.log("\n===== 2. Function Expression =====");
+
+        // Function Expression
+        const add = function(a, b) {
+            return a + b;
+        };
+
+        // Invoking the function
+        console.log(`2 + 3 = ${add(2, 3)}`);
+
+        console.log("\n===== 3. Arrow Function =====");
+
+        // Arrow Function
+        const multiply = (x, y) => x * y;
+
+        // Invoking the function
+        console.log(`4 * 5 = ${multiply(4, 5)}`);
+
+        console.log("\n===== 4. Function with Default Parameters =====");
+
+        // Function with Default Parameters
+        function greetUser(name = 'Guest') {
+            console.log(`Welcome, ${name}!`);
+        }
+
+        // Invoking the function without arguments
+        greetUser();
+
+        // Invoking the function with an argument
+        greetUser('Bob');
+
+        console.log("\n===== 5. Function with Rest Parameters =====");
+
+        // Function with Rest Parameters
+        function sum(...numbers) {
+            return numbers.reduce((total, num) => total + num, 0);
+        }
+
+        // Invoking the function with multiple arguments
+        console.log(`Sum: ${sum(1, 2, 3, 4)}`);
+
+        console.log("\n===== 6. Anonymous Function =====");
+
+        // Anonymous Function assigned to a variable
+        const sayHi = function() {
+            console.log('Hi there!');
+        };
+
+        // Invoking the function
+        sayHi();
+
+        console.log("\n===== 7. Immediately Invoked Function Expression (IIFE) =====");
+
+        // Immediately Invoked Function Expression
+        (function() {
+            console.log('This function runs immediately!');
+        })();
+
+        console.log("\n===== 8. Function Scope =====");
+
+        // Function Scope
+        function scopeTest() {
+            let localVar = 'I am local';
+            console.log(localVar);
+        }
+
+        // Invoking the function
+        scopeTest();
+
+        // Trying to access localVar outside its scope
+        try {
+            console.log(localVar);
+        } catch (error) {
+            console.log('localVar is not defined outside the function.');
+        }
+
+        console.log("\n===== 9. Nested Functions and Closures =====");
+
+        // Outer Function
+        function outerFunction(outerVariable) {
+            // Inner Function
+            function innerFunction(innerVariable) {
+                console.log(`Outer Variable: ${outerVariable}`);
+                console.log(`Inner Variable: ${innerVariable}`);
+            }
+            return innerFunction;
+        }
+
+        // Invoking the outer function
+        const newFunction = outerFunction('outside');
+
+        // Invoking the inner function
+        newFunction('inside');
+
+        console.log("\n===== 10. Function Hoisting =====");
+
+        // Invoking the function before its declaration
+        hoistedFunction();
+
+        // Function Declaration (hoisted)
+        function hoistedFunction() {
+            console.log('This function is hoisted!');
+        }
+
+        console.log("\n===== 11. Callback Function =====");
+
+        // Function that accepts a callback
+        function fetchData(callback) {
+            // Simulate data fetching
+            setTimeout(() => {
+                const data = 'Sample Data';
+                callback(data);
+            }, 1000);
+        }
+
+        // Callback function
+        function displayData(data) {
+            console.log(`Received: ${data}`);
+        }
+
+        // Invoking the function with a callback
+        fetchData(displayData);
+
+        console.log("\n===== 12. Recursive Function =====");
+
+        // Recursive Function to calculate factorial
+        function factorial(n) {
+            if (n <= 1) return 1;
+            return n * factorial(n - 1);
+        }
+
+        // Invoking the recursive function
+        console.log(`Factorial of 5: ${factorial(5)}`);
+    </script>
+</body>
+</html>

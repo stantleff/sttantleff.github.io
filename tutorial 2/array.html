@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Array Examples</title>
+</head>
+<body>
+    <h1>JavaScript Array Examples</h1>
+    <p>Open your browser's console to view the output of the following examples.</p>
+
+    <script>
+        console.log("===== 1. Creating Arrays =====");
+
+        // Creating an array of strings
+        const shopping = ["bread", "milk", "cheese", "hummus", "noodles"];
+        console.log("Shopping list:", shopping);
+
+        // Creating an array with mixed data types
+        const mixedArray = [1, "two", true, null, undefined, {name: "Alice"}, [1, 2, 3]];
+        console.log("Mixed array:", mixedArray);
+
+        console.log("\n===== 2. Accessing and Modifying Array Items =====");
+
+        // Accessing items
+        console.log("First item:", shopping[0]);
+        console.log("Third item:", shopping[2]);
+
+        // Modifying items
+        shopping[1] = "soy milk";
+        console.log("Modified shopping list:", shopping);
+
+        console.log("\n===== 3. Finding the Length of an Array =====");
+
+        console.log("Number of items in shopping list:", shopping.length);
+
+        console.log("\n===== 4. Adding Items to an Array =====");
+
+        // Adding to the end
+        shopping.push("coffee");
+        console.log("After adding to the end:", shopping);
+
+        // Adding to the beginning
+        shopping.unshift("tea");
+        console.log("After adding to the beginning:", shopping);
+
+        console.log("\n===== 5. Removing Items from an Array =====");
+
+        // Removing from the end
+        shopping.pop();
+        console.log("After removing from the end:", shopping);
+
+        // Removing from the beginning
+        shopping.shift();
+        console.log("After removing from the beginning:", shopping);
+
+        console.log("\n===== 6. Finding the Index of an Item =====");
+
+        const index = shopping.indexOf("cheese");
+        console.log("Index of 'cheese':", index);
+
+        console.log("\n===== 7. Removing a Specific Item by Index =====");
+
+        // Removing 'cheese' from the array
+        if (index !== -1) {
+            shopping.splice(index, 1);
+        }
+        console.log("After removing 'cheese':", shopping);
+
+        console.log("\n===== 8. Looping Through an Array =====");
+
+        shopping.forEach((item, i) => {
+            console.log(`Item ${i + 1}: ${item}`);
+        });
+
+        console.log("\n===== 9. Converting Between Strings and Arrays =====");
+
+        // String to array
+        const data = "Manchester,London,Liverpool,Birmingham,Leeds,Carlisle";
+        const cities = data.split(",");
+        console.log("Array of cities:", cities);
+
+        // Array to string
+        const newString = cities.join(";");
+        console.log("New string:", newString);
+
+        console.log("\n===== 10. Sorting an Array =====");
+
+        const numbers = [5, 3, 8, 1, 2];
+        console.log("Unsorted numbers:", numbers);
+
+        numbers.sort((a, b) => a - b);
+        console.log("Sorted numbers:", numbers);
+
+        console.log("\n===== 11. Filtering an Array =====");
+
+        const filteredNumbers = numbers.filter(number => number > 3);
+        console.log("Numbers greater than 3:", filteredNumbers);
+
+        console.log("\n===== 12. Mapping an Array to a New Array =====");
+
+        const doubledNumbers = numbers.map(number => number * 2);
+        console.log("Doubled numbers:", doubledNumbers);
+
+        console.log("\n===== 13. Reducing an Array to a Single Value =====");
+
+        const sum = numbers.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+        console.log("Sum of numbers:", sum);
+    </script>
+</body>
+</html>

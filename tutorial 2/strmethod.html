@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Useful String Methods</title>
+</head>
+<body>
+    <h1>JavaScript Useful String Methods</h1>
+    <p>Open your browser's console to view the output of the following examples.</p>
+
+    <script>
+        console.log("===== 1. Strings as Objects =====");
+
+        // Creating a string as a primitive
+        let strPrimitive = 'Hello, world!';
+        console.log("Primitive string:", strPrimitive);
+
+        // Creating a string as an object
+        let strObject = new String('Hello, world!');
+        console.log("String object:", strObject);
+
+        console.log("\n===== 2. Finding the Length of a String =====");
+
+        let browserType = 'mozilla';
+        console.log(`The length of "${browserType}" is ${browserType.length}.`);
+
+        console.log("\n===== 3. Retrieving a Specific String Character =====");
+
+        console.log(`The first character of "${browserType}" is "${browserType[0]}".`);
+        console.log(`The fourth character of "${browserType}" is "${browserType.charAt(3)}".`);
+
+        console.log("\n===== 4. Testing if a String Contains a Substring =====");
+
+        if (browserType.includes('zilla')) {
+            console.log('The substring "zilla" was found.');
+        } else {
+            console.log('The substring "zilla" was not found.');
+        }
+
+        console.log("\n===== 5. Finding the Position of a Substring in a String =====");
+
+        let tagline = 'The quick brown fox jumps over the lazy dog.';
+        let index = tagline.indexOf('quick');
+        if (index !== -1) {
+            console.log(`The word "quick" starts at index ${index}.`);
+        } else {
+            console.log('The word "quick" was not found.');
+        }
+
+        console.log("\n===== 6. Extracting a Substring from a String =====");
+
+        let fullName = 'Mozilla Developer Network';
+        let firstWord = fullName.slice(0, 7);
+        console.log(`The first word is: "${firstWord}".`);
+
+        let domain = fullName.substring(8, 18);
+        console.log(`The domain is: "${domain}".`);
+
+        console.log("\n===== 7. Changing Case =====");
+
+        let mixedCase = 'JavaScript is Fun!';
+        console.log(mixedCase.toLowerCase());
+        console.log(mixedCase.toUpperCase());
+
+        console.log("\n===== 8. Updating Parts of a String =====");
+
+        let phrase = 'I love cats.';
+        let newPhrase = phrase.replace('cats', 'dogs');
+        console.log(newPhrase);
+
+        console.log("\n===== 9. Trimming Whitespace from a String =====");
+
+        let userInput = '   Hello, User!   ';
+        console.log(`Before trim: "${userInput}"`);
+        console.log(`After trim: "${userInput.trim()}"`);
+
+        console.log("\n===== 10. Splitting a String into an Array =====");
+
+        let csvData = 'John,Paul,George,Ringo';
+        let bandMembers = csvData.split(',');
+        console.log(bandMembers);
+
+        console.log("\n===== 11. Repeating a String =====");
+
+        let chorus = 'Na '.repeat(16) + 'Batman!';
+        console.log(chorus);
+    </script>
+</body>
+</html>
