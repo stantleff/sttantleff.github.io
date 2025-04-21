@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Looping Examples</title>
+</head>
+<body>
+    <h1>JavaScript Looping Examples</h1>
+    <p>Open your browser's console to view the output of the following examples.</p>
+
+    <script>
+        console.log("===== 1. for Loop =====");
+
+        const cats = ["Leopard", "Serval", "Jaguar", "Tiger", "Caracal", "Lion"];
+        for (let i = 0; i < cats.length; i++) {
+            console.log(cats[i]);
+        }
+
+        console.log("\n===== 2. for...of Loop =====");
+
+        for (const cat of cats) {
+            console.log(cat);
+        }
+
+        console.log("\n===== 3. while Loop =====");
+
+        let i = 0;
+        while (i < cats.length) {
+            console.log(cats[i]);
+            i++;
+        }
+
+        console.log("\n===== 4. do...while Loop =====");
+
+        i = 0;
+        do {
+            console.log(cats[i]);
+            i++;
+        } while (i < cats.length);
+
+        console.log("\n===== 5. Exiting Loops with break =====");
+
+        for (const cat of cats) {
+            if (cat === "Jaguar") {
+                console.log("Found the Jaguar, exiting loop.");
+                break;
+            }
+            console.log(cat);
+        }
+
+        console.log("\n===== 6. Skipping Iterations with continue =====");
+
+        for (const cat of cats) {
+            if (cat === "Tiger") {
+                console.log("Skipping the Tiger.");
+                continue;
+            }
+            console.log(cat);
+        }
+
+        console.log("\n===== 7. Active Learning: Launch Countdown =====");
+
+        let countdown = 10;
+        while (countdown >= 0) {
+            if (countdown === 10) {
+                console.log("Countdown " + countdown);
+            } else if (countdown === 0) {
+                console.log("Blast off!");
+            } else {
+                console.log(countdown);
+            }
+            countdown--;
+        }
+
+        console.log("\n===== 8. Active Learning: Filling in a Guest List =====");
+
+        const guestList = ["Chris", "Anne", "Colin", "Terri", "Phil", "Lola", "Sam", "Kay", "Bruce"];
+        const refused = [];
+        const admitted = [];
+
+        for (const guest of guestList) {
+            if (guest === "Phil" || guest === "Lola") {
+                refused.push(guest);
+            } else {
+                admitted.push(guest);
+            }
+        }
+
+        console.log("Admitted guests:");
+        for (const guest of admitted) {
+            console.log(guest);
+        }
+
+        console.log("Refused guests:");
+        for (const guest of refused) {
+            console.log(guest);
+        }
+    </script>
+</body>
+</html>

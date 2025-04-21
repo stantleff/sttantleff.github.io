@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Function Library</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        input {
+            padding: 5px;
+            font-size: 18px;
+            width: 150px;
+            text-align: center;
+        }
+        p {
+            font-size: 20px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>JavaScript Function Library</h1>
+    <label for="numberInput">Enter a number:</label>
+    <input type="number" id="numberInput">
+    <p id="output">Results will appear here...</p>
+
+    <script>
+        const input = document.getElementById("numberInput");
+        const para = document.getElementById("output");
+
+        // Function to return the square of a number
+        function squared(num) {
+            return num * num;
+        }
+
+        // Function to return the cube of a number
+        function cubed(num) {
+            return num * num * num;
+        }
+
+        // Function to return the factorial of a number
+        function factorial(num) {
+            if (num < 0) return "Undefined (factorial of negative numbers doesn't exist)";
+            if (num === 0) return 1;
+            let result = 1;
+            for (let i = 1; i <= num; i++) {
+                result *= i;
+            }
+            return result;
+        }
+
+        // Event listener to update results when input changes
+        input.addEventListener("change", () => {
+            const num = parseFloat(input.value);
+            if (isNaN(num)) {
+                para.textContent = "You need to enter a valid number!";
+            } else {
+                para.innerHTML = `<strong>${num}</strong> squared is <strong>${squared(num)}</strong>.<br>`;
+                para.innerHTML += `<strong>${num}</strong> cubed is <strong>${cubed(num)}</strong>.<br>`;
+                para.innerHTML += `<strong>${num}</strong> factorial is <strong>${factorial(num)}</strong>.`;
+            }
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript Events Examples</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        button, a {
+            margin: 10px 0;
+            padding: 10px 15px;
+            font-size: 16px;
+            text-decoration: none;
+            color: white;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        a {
+            display: inline-block;
+        }
+        a:hover {
+            background-color: #0056b3;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        input {
+            padding: 5px;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <h1>JavaScript Events Examples</h1>
+
+    <h2>1. Using addEventListener()</h2>
+    <button id="clickButton">Click Me</button>
+    <p id="clickResult"></p>
+
+    <h2>2. Event Object</h2>
+    <input type="text" id="nameInput" placeholder="Type your name">
+    <p id="nameOutput"></p>
+
+    <h2>3. Preventing Default Behavior</h2>
+    <a href="https://www.example.com" id="exampleLink">Go to Example.com</a>
+    <p id="linkMessage"></p>
+
+    <script>
+        // 1. Using addEventListener()
+        const clickButton = document.getElementById('clickButton');
+        const clickResult = document.getElementById('clickResult');
+
+        clickButton.addEventListener('click', () => {
+            clickResult.textContent = 'Button was clicked!';
+        });
+
+        // 2. Event Object
+        const nameInput = document.getElementById('nameInput');
+        const nameOutput = document.getElementById('nameOutput');
+
+        nameInput.addEventListener('keyup', (event) => {
+            nameOutput.textContent = `You pressed "${event.key}". Current value: ${nameInput.value}`;
+        });
+
+        // 3. Preventing Default Behavior
+        const exampleLink = document.getElementById('exampleLink');
+        const linkMessage = document.getElementById('linkMessage');
+
+        exampleLink.addEventListener('click', (event) => {
+            event.preventDefault();
+            linkMessage.textContent = 'Default action prevented. Link was not followed.';
+        });
+    </script>
+</body>
+</html>

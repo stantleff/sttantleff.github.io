@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event Bubbling Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        #container {
+            padding: 20px;
+            border: 2px solid #007BFF;
+        }
+        button {
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ddd;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Event Bubbling Demonstration</h1>
+    <div id="container">
+        <button id="innerButton">Click Me!</button>
+    </div>
+    <pre id="output"></pre>
+
+    <script>
+        const output = document.getElementById('output');
+
+        function handleClick(event) {
+            output.textContent += `You clicked on a ${event.currentTarget.tagName} element\n`;
+        }
+
+        const button = document.getElementById('innerButton');
+        const container = document.getElementById('container');
+        const body = document.body;
+
+        button.addEventListener('click', handleClick);
+        container.addEventListener('click', handleClick);
+        body.addEventListener('click', handleClick);
+    </script>
+</body>
+</html>

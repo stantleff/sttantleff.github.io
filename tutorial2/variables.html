@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Variables Examples</title>
+</head>
+<body>
+    <h1>Open the Console (F12) to See JavaScript Output</h1>
+
+    <script>
+        console.log("===== 1. Declaring and Initializing Variables =====");
+
+        // Using let
+        let myVariable;
+        myVariable = 'Hello, world!';
+        console.log(myVariable);
+
+        let myVariable2 = 'Hello, again!';
+        console.log(myVariable2);
+
+        // Using const
+        const daysInWeek = 7;
+        console.log("Days in a week:", daysInWeek);
+
+        // Using var (not recommended)
+        var myName = 'Alice';
+        console.log("My name is:", myName);
+
+        console.log("\n===== 2. Variable Types =====");
+
+        // String
+        let myString = 'JavaScript is fun!';
+        console.log("String:", myString);
+
+        // Number
+        let myNumber = 42;
+        let myFloat = 3.14;
+        console.log("Number:", myNumber);
+        console.log("Float:", myFloat);
+
+        // Boolean
+        let isJavaScriptFun = true;
+        console.log("Boolean:", isJavaScriptFun);
+
+        // Array
+        let myArray = [1, 2, 3, 4, 5];
+        console.log("Array:", myArray);
+
+        // Object
+        let person = {
+            name: 'Bob',
+            age: 30
+        };
+        console.log("Object:", person);
+
+        console.log("\n===== 3. Dynamic Typing =====");
+
+        let dynamicVariable = "I am a string";
+        console.log("Before change:", dynamicVariable, "Type:", typeof dynamicVariable);
+
+        dynamicVariable = 100;
+        console.log("After change:", dynamicVariable, "Type:", typeof dynamicVariable);
+
+        console.log("\n===== 4. Constants in JavaScript =====");
+
+        const birthYear = 1990;
+        console.log("Birth Year:", birthYear);
+
+        // Modifying array inside a constant
+        const myArrayConst = [1, 2, 3];
+        myArrayConst.push(4);
+        console.log("Modified array:", myArrayConst);
+
+        // Modifying object inside a constant
+        const myObjectConst = { name: "Alice", age: 25 };
+        myObjectConst.age = 26;
+        console.log("Modified object:", myObjectConst);
+
+        console.log("\n===== 5. When to Use `const` vs `let` =====");
+
+        // Example of using let in a loop
+        for (let i = 0; i < 3; i++) {
+            console.log("Loop iteration:", i);
+        }
+
+        // Example of using const for a value that shouldn't change
+        const pi = 3.14159;
+        console.log("Value of pi:", pi);
+    </script>
+</body>
+</html>

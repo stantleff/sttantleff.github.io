@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript String Examples</title>
+</head>
+<body>
+    <h1>JavaScript String Examples</h1>
+    <p>Open your browser's console to view the output of the following examples.</p>
+
+    <script>
+        console.log("===== 1. Declaring Strings =====");
+
+        // Using double quotes
+        let string1 = "Hello, world!";
+        console.log("string1:", string1);
+
+        // Using single quotes
+        let string2 = 'JavaScript is fun!';
+        console.log("string2:", string2);
+
+        // Using backticks (template literals)
+        let string3 = `Template literals are cool!`;
+        console.log("string3:", string3);
+
+        console.log("\n===== 2. Embedding Expressions in Strings =====");
+
+        let name = "Alice";
+        let greeting = `Hello, ${name}!`;
+        console.log("greeting:", greeting);
+
+        let a = 5;
+        let b = 10;
+        console.log(`The sum of ${a} and ${b} is ${a + b}.`);
+
+        console.log("\n===== 3. Multiline Strings =====");
+
+        // Using backticks for multiline strings
+        let multiline = `This is a string
+that spans across
+multiple lines.`;
+        console.log("multiline:", multiline);
+
+        console.log("\n===== 4. Including Quotes in Strings =====");
+
+        // Using backslashes to escape quotes
+        let quote1 = 'He said, "JavaScript is awesome!"';
+        console.log("quote1:", quote1);
+
+        let quote2 = "It's a beautiful day!";
+        console.log("quote2:", quote2);
+
+        // Using different types of quotes
+        let quote3 = "She said, 'Learning is a lifelong journey.'";
+        console.log("quote3:", quote3);
+
+        let quote4 = `He said, "It's a wonderful world."`;
+        console.log("quote4:", quote4);
+
+        console.log("\n===== 5. Numbers vs. Strings =====");
+
+        let num1 = 123; // Number
+        let str1 = "123"; // String
+
+        console.log("num1:", num1);
+        console.log("str1:", str1);
+
+        // Adding a number and a string results in concatenation
+        let result1 = num1 + str1;
+        console.log("num1 + str1:", result1);
+
+        // Converting string to number
+        let str2 = "456";
+        let num2 = Number(str2);
+        console.log("Converted str2 to number:", num2);
+
+        // Adding two numbers
+        let result2 = num1 + num2;
+        console.log("num1 + num2:", result2);
+
+        // Converting number to string
+        let num3 = 789;
+        let str3 = String(num3);
+        console.log("Converted num3 to string:", str3);
+
+        // Concatenating two strings
+        let result3 = str1 + str3;
+        console.log("str1 + str3:", result3);
+    </script>
+</body>
+</html>
